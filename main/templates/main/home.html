@@ -1,10 +1,122 @@
 {% extends 'base.html' %}
+{% load static %}
 
+{% block styles %} 
+<style>
+    .headerbar {
+        margin-bottom: 20px;
+    }
+    
+    .position-relative {
+        position: relative !important;
+    }
+
+    .bg-primary {
+        background-color: #1283da !important;;
+    }
+
+    *, :after, ::before {
+        box-sizing: border-box;
+    }
+
+    div {
+        display: block;
+        unicode-bidi: isolate;
+    }
+
+    .bg-overlay-primary:after {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(18, 131, 218, .85);
+        z-index: 2;
+    }
+
+</style>
+
+{% endblock %}
 
 
 {% block content %}
+<section class="headerbar">
+    {% include 'headerbar.html' %}
+</section>
 
-{{ key }}
+<section class="">
+    <div class="intro py-5 bg-primary position-relative text-white">
+        <div class="bg-overlay-primary">
+            <img src="{% static 'image/form-bg.jpg' %}" class="img-fluid img-cover" alt="form-backgroud image">
+        </div>
+        <div class="intro-content mt-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 align-self-center">
+                <h1 class="display-4 mb-3">Impress your clients,<br> surprise your team</h1>
+                <p class="lead mb-4">Robust is a premium theme built with Bootstrap. The theme is fully customizable &amp; can be used for any type of application.</p>
+              </div><!-- /.col-md-6 -->
+              <div class="col-md-5 ml-auto">
+                <div class="card">
+                  <div class="card-body text-dark">
+                    <form>
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                      </div>
+                      <div class="form-group">
+                        <label for="password-repeat">Repeat password</label>
+                        <input type="password" class="form-control" id="password-repeat" placeholder="Repeat your password">
+                      </div>
+                      <button type="submit" class="btn btn-success btn-block btn-lg mb-2">Sign up</button>
+                      <div class="text-center">
+                        Already have an account? <a href="#">Sign in</a>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div><!-- /.col-md-6 -->
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+<section class="segtitle">
+    <div class="align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+          <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
+          <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+          <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+            </div>
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+            <hr class="my-4">
+            <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+          </form>
+        </div>
+      </div>
+</section>
 
 
 {% endblock %}
